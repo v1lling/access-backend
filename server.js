@@ -13,7 +13,6 @@ app.use(express.urlencoded({ extended: false }));
 /*
   Session Middleware 
 */
-
 app.use(cookieParser());
 
 function allowCrossDomain(req, res, next) {
@@ -85,7 +84,6 @@ app.use(staticFileMiddleware);
 /*
 MongoDB
 */
-
 db = {};
 const MongoClient = require('mongodb').MongoClient;
 MongoClient.connect(process.env.MONGODB_CONNECTION, { useUnifiedTopology: true }, (err, client) => {
@@ -98,7 +96,7 @@ MongoClient.connect(process.env.MONGODB_CONNECTION, { useUnifiedTopology: true }
 /*
   Start Listening
 */
-var server = app.listen(process.env.PORT || 8080, function () {
+var server = app.listen(process.env.PORT || 8081, function () {
     var port = server.address().port;
     console.log("App now running on port", port);
 });
