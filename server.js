@@ -1,3 +1,4 @@
+#!/usr/bin/env node
 const express = require('express');
 const path = require('path');
 const MongoStore = require('connect-mongo').default;
@@ -101,7 +102,6 @@ var server = app.listen(process.env.PORT || 8081, function () {
     var port = server.address().port;
     console.log("App now running on port", port);
 });
-
 
 process.on('unhandledRejection', (reason, p) => {
   //console.log('Unhandled Rejection with reason:', reason);
