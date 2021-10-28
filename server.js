@@ -6,6 +6,7 @@ var session = require('express-session');
 const dotenv = require('dotenv').config();
 var cookieParser = require('cookie-parser');
 var accessRouter = require('./routes/access');
+var bodyParser = require('body-parser');
 
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
@@ -90,7 +91,7 @@ MongoClient.connect(process.env.MONGODB_CONNECTION, { useUnifiedTopology: true }
     if (err) return console.error(err)
     console.log("DB connected sucessfully");
     db = client;
-    spotiflyDb = db.db('fluttify');
+    accessDb = db.db('access');
 })
 
 /*
