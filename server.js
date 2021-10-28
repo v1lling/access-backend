@@ -9,8 +9,10 @@ var cookieParser = require('cookie-parser');
 var accessRouter = require('./routes/access');
 var bodyParser = require('body-parser');
 
+// Parse URL-encoded bodies (as sent by HTML forms)
+app.use(express.urlencoded());
+// Parse JSON bodies (as sent by API clients)
 app.use(express.json());
-app.use(express.urlencoded({ extended: false }));
 
 /*
   Session Middleware 
