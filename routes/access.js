@@ -5,7 +5,7 @@ var router = express.Router();
 
 router.post('/checkin', async (req, res) => {
   console.log(req.body);
-// playlist = await checkinService.checkin(req.body.userinfo);
+  playlist = await checkinService.checkin(req.body);
   res.sendStatus(200);
 })
 
