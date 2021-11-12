@@ -1,7 +1,10 @@
 const getCurrentPeopleCount =  function(roomId) {
     return new Promise(async (resolve, reject) => {
-        peoplecount = await accessDb.collection('checkins').find({genres: { "$in" : genres}}).toArray();
-        resolve();
+       
+        var peoplecount = await accessDb.collection('checkins').find({checkin: {$lt: new Date()},checkout: { $gte: new Date()}}).toArray();
+        console.log(peoplecount);
+        // > db.checkins.findOne({checkin: {$lt: new Date()},checkout: { $gte: new Date()}})
+        resolve(peoplecount.length);
     });
 }
 

@@ -7,11 +7,12 @@ var router = express.Router();
 router.post('/checkin', async (req, res) => {
   console.log(req.body);
   var checkInObjIsoDate = req.body;
-  checkInObjIsoDate["checkin"] = IsoDate(checkInObjIsoDate["checkin"]);
-  checkInObjIsoDate["checkout"] = IsoDate(checkInObjIsoDate["checkout"]);
-  playlist = await checkinService.checkin(checkInObjIsoDate);
-  currentUsers = await roomInfoService.getCurrentPeopleCount(req.body.roomId);
-  res.sendStatus(200);
+  checkInObjIsoDate["checkin"] = new Date(checkInObjIsoDate["checkin"]);
+  checkInObjIsoDate["checkout"] = new Date(checkInObjIsoDate["checkout"]);
+  var checkin = await checkinService.checkin(checkInObjIsoDate);
+  var currentUsers = await roomInfoService.getCurrentPeopleCount(req.body.roomId);
+  console.log("current : " + currentUsers);
+  res.send({usercount: currentUsers});
 })
 
 module.exports = router;
