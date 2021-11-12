@@ -8,7 +8,7 @@ const RESOURCES = {
 "assets/assets/images/hand.png": "1e3075b68984c5b9f02e662a1cdd9cc8",
 "assets/assets/images/hand.jpg": "3428546fc5d31da9ea9f8cecf37b5ab2",
 "assets/assets/images/nfc_hand.jpg": "731127aa0ddca0bb60c2ed63fd3ee619",
-"assets/NOTICES": "dc3c3fffc734198502d0a73bcbb2967d",
+"assets/NOTICES": "7125d1a0a8a9b794509a85d949a24757",
 "assets/fonts/MaterialIcons-Regular.otf": "4e6447691c9509f7acdbf8a931a85ca1",
 "assets/AssetManifest.json": "ad5f9d0d6dd7585d2d189889cb5207c5",
 "assets/FontManifest.json": "71a4a82de411f155107da3f8dac64ebd",
@@ -41,9 +41,9 @@ const RESOURCES = {
 "icons/Icon-maskable-192.png": "c457ef57daa1d16f64b27b786ec2ea3c",
 "icons/Icon-maskable-512.png": "301a7604d45b3e739efc881eb04896ea",
 "version.json": "b436de0ae8478d892e8d0fd86680fa1a",
-"main.dart.js": "eea179204153e333012ff81b7b4714f3",
-"index.html": "e2465a387b0ec61e362d01524ef534d1",
-"/": "e2465a387b0ec61e362d01524ef534d1"
+"main.dart.js": "49398055d57a670f5f0a4937a7082604",
+"index.html": "fe2954d5c1b32028a39643cbaf45342b",
+"/": "fe2954d5c1b32028a39643cbaf45342b"
 };
 
 // The application shell files that are downloaded before a service worker can
