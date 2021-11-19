@@ -1,5 +1,6 @@
 let abortController = new AbortController();
 
+
 async function startNDEFReaderJS() {
     const ndef = new NDEFReader();
     const nfcPermissionStatus = await navigator.permissions.query({ name: "nfc" });
