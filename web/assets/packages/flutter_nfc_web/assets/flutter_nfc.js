@@ -26,7 +26,10 @@ async function startNDEFReaderJS() {
             return;
         };
         
-    }).catch(error => raiseErrorEvent(error.message));
+    }).catch(error => {
+        console.log(error);
+        raiseErrorEvent(error.message);
+    });
 }
 
 function stopNDEFReaderJS() {
