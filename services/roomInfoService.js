@@ -1,7 +1,6 @@
-const getCurrentPeopleCount =  function(roomId) {
-    return new Promise(async (resolve, reject) => {
-       
-        var peoplecount = await accessDb.collection('checkins').find({roomId: roomId, checkin: {$lt: new Date()},checkout: { $gte: new Date()}}).toArray();
+const getCurrentPeopleCount =  function(roomId, checkin) {
+    return new Promise(async (resolve, reject) => { 
+        var peoplecount = await accessDb.collection('checkins').find({roomId: roomId, checkin: {$lte: checkin},checkout: { $gte: checkin}}).toArray();
         resolve(peoplecount.length);
     });
 }

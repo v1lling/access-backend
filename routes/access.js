@@ -10,7 +10,7 @@ router.post('/checkin', async (req, res) => {
   checkInObjIsoDate["checkin"] = new Date(checkInObjIsoDate["checkin"]);
   checkInObjIsoDate["checkout"] = new Date(checkInObjIsoDate["checkout"]);
   var checkin = await checkinService.checkin(checkInObjIsoDate);
-  var currentUsers = await roomInfoService.getCurrentPeopleCount(req.body.roomId);
+  var currentUsers = await roomInfoService.getCurrentPeopleCount(req.body.roomId, checkInObjIsoDate["checkin"]);
   console.log("current : " + currentUsers);
   res.send({usercount: currentUsers});
 })
