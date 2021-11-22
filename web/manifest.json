@@ -14,6 +14,17 @@
         "scope_url_host": "access.netpy.de",
         "scope_url_path": "/#/"
     },
+    "url_handlers": [
+        {
+          "origin": "https://access.netpy.de/"
+        },
+        {
+          "origin": "https://access.netpy.de/#/*"
+        },
+        {
+            "origin": "https://access.netpy.de/*"
+        }
+    ],
     "icons": [
         {
             "src": "icons/Icon-192.png",

@@ -36,15 +36,15 @@ const RESOURCES = {
 "assets/packages/cupertino_icons/assets/CupertinoIcons.ttf": "6d342eb68f170c97609e9da345464e5e",
 "assets/packages/flutter_nfc_web/assets/flutter_nfc.js": "dadf28f15920e11f7415c3249143b229",
 "favicon.png": "5dcef449791fa27946b3d35ad8803796",
-"manifest.json": "82f6eb57bf27ff84e8a380be431075e3",
+"manifest.json": "59e03342498a0b4d4f7b8c75af3b3b80",
 "icons/Icon-512.png": "96e752610906ba2a93c65f8abe1645f1",
 "icons/Icon-192.png": "ac9a721a12bbc803b44f645561ecb1e1",
 "icons/Icon-maskable-192.png": "c457ef57daa1d16f64b27b786ec2ea3c",
 "icons/Icon-maskable-512.png": "301a7604d45b3e739efc881eb04896ea",
 "version.json": "b436de0ae8478d892e8d0fd86680fa1a",
 "main.dart.js": "05d6ccc4bec881feae5900b6564c03cd",
-"index.html": "e0c3d008327a9c52c70341ae25526a2f",
-"/": "e0c3d008327a9c52c70341ae25526a2f"
+"index.html": "23de07d0e1b339d9517f57d8875cf294",
+"/": "23de07d0e1b339d9517f57d8875cf294"
 };
 
 // The application shell files that are downloaded before a service worker can
