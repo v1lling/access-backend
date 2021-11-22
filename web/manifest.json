@@ -8,6 +8,12 @@
     "description": "A new Flutter project.",
     "orientation": "portrait-primary",
     "prefer_related_applications": false,
+    "scope_url": "https://access.netpy/#/",
+    "intent_filters": {
+        "scope_url_scheme": "https",
+        "scope_url_host": "access.netpy.com",
+        "scope_url_path": "/#/"
+    },
     "icons": [
         {
             "src": "icons/Icon-192.png",
