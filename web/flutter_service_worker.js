@@ -34,7 +34,7 @@ const RESOURCES = {
 "assets/packages/flutter_math_fork/lib/katex_fonts/fonts/KaTeX_Main-Regular.ttf": "5a5766c715ee765aa1398997643f1589",
 "assets/packages/wakelock_web/assets/no_sleep.js": "7748a45cd593f33280669b29c2c8919a",
 "assets/packages/cupertino_icons/assets/CupertinoIcons.ttf": "6d342eb68f170c97609e9da345464e5e",
-"assets/packages/flutter_nfc_web/assets/flutter_nfc.js": "436c56d6433808e3e6c4f2f82c5f7627",
+"assets/packages/flutter_nfc_web/assets/flutter_nfc.js": "dadf28f15920e11f7415c3249143b229",
 "favicon.png": "5dcef449791fa27946b3d35ad8803796",
 "manifest.json": "49540e36967cf4d78a66bbf5669aa9ef",
 "icons/Icon-512.png": "96e752610906ba2a93c65f8abe1645f1",
@@ -42,9 +42,9 @@ const RESOURCES = {
 "icons/Icon-maskable-192.png": "c457ef57daa1d16f64b27b786ec2ea3c",
 "icons/Icon-maskable-512.png": "301a7604d45b3e739efc881eb04896ea",
 "version.json": "b436de0ae8478d892e8d0fd86680fa1a",
-"main.dart.js": "c6714ea32925fea80741ab1ed6712e75",
-"index.html": "2923309e93d9973bbf7cd57d602cefb6",
-"/": "2923309e93d9973bbf7cd57d602cefb6"
+"main.dart.js": "05d6ccc4bec881feae5900b6564c03cd",
+"index.html": "22bc30cb491f0c14a6c8029fe23179ae",
+"/": "22bc30cb491f0c14a6c8029fe23179ae"
 };
 
 // The application shell files that are downloaded before a service worker can
