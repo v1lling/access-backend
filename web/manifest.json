@@ -1,25 +1,25 @@
 {
     "name": "access",
     "short_name": "access",
-    "start_url": "https://access.netpy.de/",
+    "start_url": "/#/",
     "display": "standalone",
     "background_color": "#0175C2",
     "theme_color": "#0175C2",
     "description": "A new Flutter project.",
     "orientation": "portrait-primary",
     "prefer_related_applications": false,
-    "scope": "https://access.netpy.de/",
+    "scope": "/",
     "intent_filters": {
         "scope_url_scheme": "https",
         "scope_url_host": "access.netpy.de",
-        "scope_url_path": "/#/"
+        "scope_url_path": "/"
     },
     "url_handlers": [
         {
-          "origin": "https://access.netpy.de/"
+            "origin": "https://access.netpy.de/"
         },
         {
-          "origin": "https://access.netpy.de/#/*"
+            "origin": "https://access.netpy.de/#/*"
         },
         {
             "origin": "https://access.netpy.de/*"
