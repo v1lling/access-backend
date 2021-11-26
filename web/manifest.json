@@ -1,19 +1,13 @@
 {
     "name": "access",
     "short_name": "access",
-    "start_url": "/#/",
+    "start_url": ".",
     "display": "standalone",
     "background_color": "#0175C2",
     "theme_color": "#0175C2",
     "description": "A new Flutter project.",
     "orientation": "portrait-primary",
     "prefer_related_applications": false,
-    "scope": "/",
-    "intent_filters": {
-        "scope_url_scheme": "https",
-        "scope_url_host": "access.netpy.de",
-        "scope_url_path": "/"
-    },
     "icons": [
         {
             "src": "icons/Icon-192.png",
