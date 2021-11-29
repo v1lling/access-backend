@@ -6,23 +6,36 @@ async function startNDEFReaderJS() {
         await ndef.scan({signal: abortController.signal});
         ndef.onreadingerror = (event) => raiseErrorEvent("readErrorJS", event);
         ndef.onreading = event => {
-            let records = [];
-            const decoder = new TextDecoder();
-            console.log(event.message.records);
+            let jsRecords = [];
+            let encoder = new TextEncoder(); 
+
             event.message.records.forEach(function(record) {
-                let recordObj = new JsNdefRecord({
-                    data: decoder.decode(record.data),
-                    encoding: record.encoding,
-                    id: record.id,
-                    lang: record.lang,
-                    mediaType: record.mediaType,
-                    recordType: record.recordType
+                // only allow utf-8 encoding
+                if (record.encoding != null && record.encoding != "utf-8") return;
+                var payloadEncoded = new Uint8Array(record.data.byteLength)
+                for (var i = 0; i < payloadEncoded.length; i++) {
+                    payloadEncoded[i] = record.data.getUint8(i);
+                }
+                jsRecords.push({
+                    typeNameFormat: 0x03, // ?
+                    type: encoder.encode(record.recordType), 
+                    identifier: '', // ?
+                    payload: payloadEncoded 
                 });
-                records.push(JSON.stringify(recordObj));
             });
-            
+            let recordsJS = { 
+                handle: event.serialNumber,
+                ndef: {
+                  isWritable: true,
+                  maxSize: 0,
+                  cachedMessage: {
+                    records: jsRecords
+                  }
+                }
+            };
+
             // dispatch event to dart
-            var customEvent = new CustomEvent("readSuccessJS", {detail: records});
+            var customEvent = new CustomEvent("readSuccessJS", {detail: recordsJS});
             document.dispatchEvent(customEvent);
             return;
         };
