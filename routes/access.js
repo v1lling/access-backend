@@ -14,7 +14,7 @@ router.post('/checkin', async (req, res) => {
 })
 
 router.get('/checkincount', async (req, res) => {
-  var checkInObjIsoDate = req.body;
+  var checkInObjIsoDate = req.query.roomId;
   checkInObjIsoDate["checkin"] = new Date(checkInObjIsoDate["checkin"]);
   checkInObjIsoDate["checkout"] = new Date(checkInObjIsoDate["checkout"]);
   var currentUsers = await roomInfoService.getCurrentPeopleCount(req.body.roomId, checkInObjIsoDate["checkin"]);
