@@ -80,10 +80,21 @@ app.use((req, res, next) => {
 });
 
 /* 
-    Middleware for serving Vue App
+    Middleware for serving Flutter App and ressources
 */
 const staticFileMiddleware = express.static(path.join(__dirname + '/web'));
 app.use(staticFileMiddleware);
+
+/*
+    Redirect all requests to webapp
+*/
+app.get('/*', function (req, res) {
+  res.sendFile(path.join(__dirname, '/web/index.html'), function (err) {
+    if (err) {
+      res.status(500).send(err)
+    }
+  })
+})
 
 /*
 MongoDB
