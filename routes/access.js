@@ -5,13 +5,19 @@ var roomInfoService = require('../services/roomInfoService');
 var router = express.Router();
 
 router.post('/checkin', async (req, res) => {
-  console.log(req.body);
   var checkInObjIsoDate = req.body;
   checkInObjIsoDate["checkin"] = new Date(checkInObjIsoDate["checkin"]);
   checkInObjIsoDate["checkout"] = new Date(checkInObjIsoDate["checkout"]);
-  var checkin = await checkinService.checkin(checkInObjIsoDate);
+  await checkinService.checkin(checkInObjIsoDate);
   var currentUsers = await roomInfoService.getCurrentPeopleCount(req.body.roomId, checkInObjIsoDate["checkin"]);
-  console.log("current : " + currentUsers);
+  res.send({usercount: currentUsers});
+})
+
+router.get('/checkincount', async (req, res) => {
+  var checkInObjIsoDate = req.body;
+  checkInObjIsoDate["checkin"] = new Date(checkInObjIsoDate["checkin"]);
+  checkInObjIsoDate["checkout"] = new Date(checkInObjIsoDate["checkout"]);
+  var currentUsers = await roomInfoService.getCurrentPeopleCount(req.body.roomId, checkInObjIsoDate["checkin"]);
   res.send({usercount: currentUsers});
 })
 
