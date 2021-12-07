@@ -243,6 +243,7 @@ async function startNDEFWriterJS(nativeNDEFRecords) {
             );
             webNDEFRecords.push(webNDEFRecord);  
         };
+        ndef = new NDEFReader();
         await ndef.write({records: webNDEFRecords});
     } catch(error) {
         console.log(error);

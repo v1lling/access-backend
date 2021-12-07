@@ -28,7 +28,7 @@ const RESOURCES = {
 "assets/packages/flutter_math_fork/lib/katex_fonts/fonts/KaTeX_Size3-Regular.ttf": "e87212c26bb86c21eb028aba2ac53ec3",
 "assets/packages/flutter_math_fork/lib/katex_fonts/fonts/KaTeX_Main-Regular.ttf": "5a5766c715ee765aa1398997643f1589",
 "assets/packages/wakelock_web/assets/no_sleep.js": "7748a45cd593f33280669b29c2c8919a",
-"assets/packages/nfc_manager/assets/flutter_nfc.js": "48dd5199dbdf39b375251b6ba6437240",
+"assets/packages/nfc_manager/assets/flutter_nfc.js": "bcf42c901e6dda342d884bfad6e59b80",
 "assets/packages/cupertino_icons/assets/CupertinoIcons.ttf": "6d342eb68f170c97609e9da345464e5e",
 "favicon.png": "5dcef449791fa27946b3d35ad8803796",
 "manifest.json": "6bd3aa0db89f8d04fe4ad9607c29fbc8",
@@ -38,8 +38,8 @@ const RESOURCES = {
 "icons/Icon-maskable-512.png": "301a7604d45b3e739efc881eb04896ea",
 "version.json": "b436de0ae8478d892e8d0fd86680fa1a",
 "main.dart.js": "ac5c80ba01db1c18feeb00d27f1c814c",
-"index.html": "4e31abb88e7ac4e61121d8d6f0437ee2",
-"/": "4e31abb88e7ac4e61121d8d6f0437ee2"
+"index.html": "425119c423df90b4b7acf783389011b1",
+"/": "425119c423df90b4b7acf783389011b1"
 };
 
 // The application shell files that are downloaded before a service worker can
