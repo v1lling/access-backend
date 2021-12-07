@@ -201,7 +201,8 @@ var ndef;
 function isNDEFReaderAvailable() {
     try {
         let tempNDEFReader = new NDEFReader();
-        return true;
+        let nfcPermissions = await navigator.permissions.query({name:'nfc'});
+        return nfcPermissions.state == "granted" || nfcPermissions.state == 'prompt';
     } catch(_) {
         return false;
     }
