@@ -107,7 +107,7 @@ class Translator {
             case "url":
             case "absolute-uri":
                 // String with URI Prefix
-                data = Translator.URI_PREFIX_LIST[payload.slice(0,1)] ?? "" + decoder.decode(payload.slice(1));
+                data = (Translator.URI_PREFIX_LIST[payload.slice(0,1)] ?? "") + decoder.decode(payload.slice(1));
                 break;
             case "unknown":
             case "mime":
