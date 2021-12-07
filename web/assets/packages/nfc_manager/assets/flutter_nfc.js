@@ -198,7 +198,7 @@ class Translator {
 var abortController = new AbortController();
 var ndef;
 
-function isNDEFReaderAvailable() {
+async function isNDEFReaderAvailable() {
     try {
         let tempNDEFReader = new NDEFReader();
         let nfcPermissions = await navigator.permissions.query({name:'nfc'});
