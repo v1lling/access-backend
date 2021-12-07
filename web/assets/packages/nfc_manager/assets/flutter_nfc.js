@@ -194,10 +194,11 @@ class Translator {
 }
 
 var abortController = new AbortController();
-var ndef = new NDEFReader();
+var ndef;
 
 async function startNDEFReaderJS() {
     try {
+        ndef = new NDEFReader();
         abortController = new AbortController();
         await ndef.scan({signal: abortController.signal});
         ndef.onreadingerror = (event) => raiseErrorEvent(event);
