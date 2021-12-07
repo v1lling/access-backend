@@ -210,6 +210,10 @@ function isNDEFReaderAvailable() {
 async function startNDEFReaderJS() {
     try {
         ndef = new NDEFReader();
+    } catch(error) {
+        raiseErrorEvent("Web-NFC is not available");
+    }
+    try {
         abortController = new AbortController();
         await ndef.scan({signal: abortController.signal});
         ndef.onreadingerror = (event) => raiseErrorEvent("Error during NFC reading");
@@ -233,7 +237,7 @@ async function startNDEFReaderJS() {
             }
         }
     } catch(error) {
-        raiseErrorEvent("Web-NFC is not available or not permitted");
+        raiseErrorEvent(error.message);
     }
 }
 
