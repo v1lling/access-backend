@@ -1,7 +1,4 @@
-/*
-    Script for Web-NFC Support in NFC_Manager Plugin
-    For changes to take effect, this file has to be minified and replace flutter_nfc_min.js
-*/
+
 
 /*
     Translates Web-NFC NDEFRecord to Native-NFC NDEFRecord and vice versa
@@ -193,15 +190,29 @@ class Translator {
     }
 }
 
+/*
+    Script for Web-NFC Support in NFC_Manager Plugin
+    For changes to take effect, this file has to be minified and replace flutter_nfc_min.js
+*/
+
 var abortController = new AbortController();
 var ndef;
+
+function isNDEFReaderAvailable() {
+    try {
+        let tempNDEFReader = new NDEFReader();
+        return true;
+    } catch(_) {
+        return false;
+    }
+}
 
 async function startNDEFReaderJS() {
     try {
         ndef = new NDEFReader();
         abortController = new AbortController();
         await ndef.scan({signal: abortController.signal});
-        ndef.onreadingerror = (event) => raiseErrorEvent(event);
+        ndef.onreadingerror = (event) => raiseErrorEvent("Error during NFC reading");
         ndef.onreading = event => {
             try {
                 let jsNDEFRecords = event.message.records;
@@ -222,7 +233,7 @@ async function startNDEFReaderJS() {
             }
         }
     } catch(error) {
-        raiseErrorEvent(error.message);
+        raiseErrorEvent("Web-NFC is not available or not permitted");
     }
 }
 
