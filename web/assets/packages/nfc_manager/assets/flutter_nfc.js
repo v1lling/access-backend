@@ -2,76 +2,6 @@
     Script for Web-NFC Support in NFC_Manager Plugin
     For changes to take effect, this file has to be minified and replace flutter_nfc_min.js
 */
-var abortController = new AbortController();
-var ndef = new NDEFReader();
-
-
-async function startNDEFReaderJS() {
-    try {
-        abortController = new AbortController();
-        await ndef.scan({signal: abortController.signal});
-        ndef.onreadingerror = (event) => raiseErrorEvent(event);
-        ndef.onreading = event => {
-            try {
-                let jsNDEFRecords = event.message.records;
-                let nativeNDEFRecords = [];
-                // Create NDEF Records
-                for (recordIdx in jsNDEFRecords) {
-                    let nativeNDEFRecord = Translator.getNativefromWebNDEFRecord(jsNDEFRecords[recordIdx]);
-                    nativeNDEFRecords.push(nativeNDEFRecord);
-                };
-                // Create NDEF Message
-                let nativeNDEFMessage = Translator.getNativefromWebNDEFMessage(nativeNDEFRecords);
-                // Dispatch Event to Dart
-                let customEvent = new CustomEvent("readSuccessJS", {detail: nativeNDEFMessage});
-                document.dispatchEvent(customEvent);
-                return;
-            } catch (error) {
-                raiseErrorEvent(error.message);
-            }
-        }
-    } catch(error) {
-        raiseErrorEvent(error.message);
-    }
-}
-
-function stopNDEFReaderJS() {
-    return abortController.abort();
-}
-
-async function startNDEFWriterJS(nativeNDEFRecords) {
-    try {
-        let webNDEFRecords = [];
-        // Create NDEF Records
-        for (recordIdx in nativeNDEFRecords) {
-            let webNDEFRecord = Translator.getWebfromNativeNDEFRecord(
-                nativeNDEFRecords[recordIdx].typeNameFormat,
-                nativeNDEFRecords[recordIdx].type,
-                nativeNDEFRecords[recordIdx].identifier,
-                nativeNDEFRecords[recordIdx].payload
-            );
-            webNDEFRecords.push(webNDEFRecord);  
-        };
-        await ndef.write({records: webNDEFRecords});
-    } catch(error) {
-        console.log(error);
-        // raiseErrorEvent("writeErrorJS", error);
-        // TODO: how to give back error on write
-    };
-}
-
-function raiseErrorEvent(errMessage) {
-    let ndefError = Translator.getNativeFromWebNDEFError(errMessage);
-    let customEvent = new CustomEvent("readErrorJS", {detail: ndefError});
-    document.dispatchEvent(customEvent, );
-}
-
-var NdefRecord = function(typeNameFormat, type, identifier, payload) {
-    this.typeNameFormat = typeNameFormat;
-    this.type = type;
-    this.identifier = identifier;
-    this.payload = payload;
-};
 
 /*
     Translates Web-NFC NDEFRecord to Native-NFC NDEFRecord and vice versa
@@ -262,3 +192,73 @@ class Translator {
         }
     }
 }
+
+var abortController = new AbortController();
+var ndef = new NDEFReader();
+
+async function startNDEFReaderJS() {
+    try {
+        abortController = new AbortController();
+        await ndef.scan({signal: abortController.signal});
+        ndef.onreadingerror = (event) => raiseErrorEvent(event);
+        ndef.onreading = event => {
+            try {
+                let jsNDEFRecords = event.message.records;
+                let nativeNDEFRecords = [];
+                // Create NDEF Records
+                for (recordIdx in jsNDEFRecords) {
+                    let nativeNDEFRecord = Translator.getNativefromWebNDEFRecord(jsNDEFRecords[recordIdx]);
+                    nativeNDEFRecords.push(nativeNDEFRecord);
+                };
+                // Create NDEF Message
+                let nativeNDEFMessage = Translator.getNativefromWebNDEFMessage(nativeNDEFRecords);
+                // Dispatch Event to Dart
+                let customEvent = new CustomEvent("readSuccessJS", {detail: nativeNDEFMessage});
+                document.dispatchEvent(customEvent);
+                return;
+            } catch (error) {
+                raiseErrorEvent(error.message);
+            }
+        }
+    } catch(error) {
+        raiseErrorEvent(error.message);
+    }
+}
+
+function stopNDEFReaderJS() {
+    return abortController.abort();
+}
+
+async function startNDEFWriterJS(nativeNDEFRecords) {
+    try {
+        let webNDEFRecords = [];
+        // Create NDEF Records
+        for (recordIdx in nativeNDEFRecords) {
+            let webNDEFRecord = Translator.getWebfromNativeNDEFRecord(
+                nativeNDEFRecords[recordIdx].typeNameFormat,
+                nativeNDEFRecords[recordIdx].type,
+                nativeNDEFRecords[recordIdx].identifier,
+                nativeNDEFRecords[recordIdx].payload
+            );
+            webNDEFRecords.push(webNDEFRecord);  
+        };
+        await ndef.write({records: webNDEFRecords});
+    } catch(error) {
+        console.log(error);
+        // raiseErrorEvent("writeErrorJS", error);
+        // TODO: how to give back error on write
+    };
+}
+
+function raiseErrorEvent(errMessage) {
+    let ndefError = Translator.getNativeFromWebNDEFError(errMessage);
+    let customEvent = new CustomEvent("readErrorJS", {detail: ndefError});
+    document.dispatchEvent(customEvent, );
+}
+
+var NdefRecord = function(typeNameFormat, type, identifier, payload) {
+    this.typeNameFormat = typeNameFormat;
+    this.type = type;
+    this.identifier = identifier;
+    this.payload = payload;
+};
