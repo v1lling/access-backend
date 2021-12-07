@@ -212,6 +212,7 @@ async function startNDEFReaderJS() {
         ndef = new NDEFReader();
     } catch(error) {
         raiseErrorEvent("Web-NFC is not available");
+        return;
     }
     try {
         abortController = new AbortController();
