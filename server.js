@@ -86,16 +86,9 @@ const staticFileMiddleware = express.static(path.join(__dirname + '/web'));
 app.use(staticFileMiddleware);
 
 /*
-    Redirect to testing files
+    Redirect to APK
 */
-app.get('/chrome', function (req, res) {
-  res.sendFile(path.join(__dirname, '/testing/chrome.html'), function (err) {
-    if (err) {
-      res.status(500).send(err)
-    }
-  })
-})
-app.get('/download', function (req, res) {
+app.get('/app', function (req, res) {
   res.sendFile(path.join(__dirname, '/testing/app-release.apk'), function (err) {
     if (err) {
       res.status(500).send(err)
