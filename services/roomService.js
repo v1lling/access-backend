@@ -22,7 +22,6 @@ const getCurrentPeopleCount =  function(roomId, checkin) {
     });
 }
 
-
 module.exports = {
     createRoom,
     getIsRoomExisting,
