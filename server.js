@@ -47,19 +47,9 @@ function allowCrossDomain(req, res, next) {
 app.use(allowCrossDomain);
 
 app.use(session({
-    secret: 'CHANGEMELATERSPOTIFLY',
-    /*
-    store: MongoStore.create({
-      mongoUrl: process.env.MONGODB_CONNECTION,
-      rolling: true,
-      resave: false,
-      useUnifiedTopology: true
-    }),
-    */
     cookie: {
-      secure: false, //change later?
-      httpOnly: false, //change later?!
-      //maxAge: 1000 * 60 * 60 * 24 * 7 // 1 week
+      secure: false, 
+      httpOnly: false,
     }
 }));
 
@@ -128,5 +118,5 @@ var server = app.listen(process.env.PORT || 8081, function () {
 });
 
 process.on('unhandledRejection', (reason, p) => {
-  //console.log('Unhandled Rejection with reason:', reason);
+  console.log('Unhandled Rejection with reason:', reason);
 });
