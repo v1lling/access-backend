@@ -1,13 +1,13 @@
 const createRoom = function(roomId) {
     return new Promise(async (resolve, reject) => {
-        await accessDb.collection('rooms').insertOne(roomId);
+        await accessDb.collection('rooms').insertOne({roomId: roomId});
         resolve();
     });
 }
 
 const getIsRoomExisting = function(roomId) {
     return new Promise(async (resolve, reject) => {
-        let isExisting = await accessDb.collection('rooms').find(roomId).limit(1).size();
+        let isExisting = await accessDb.collection('rooms').find({roomId}).limit(1).size();
         resolve(isExisting);
     });
 }
