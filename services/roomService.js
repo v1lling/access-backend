@@ -7,7 +7,7 @@ const createRoom = function(roomId) {
 
 const getIsRoomExisting = function(roomId) {
     return new Promise(async (resolve, reject) => {
-        let isExisting = await accessDb.collection('rooms').find({roomId}).limit(1).size();
+        let isExisting = await accessDb.collection('rooms').find({roomId}).count() > 0;
         resolve(isExisting);
     });
 }
