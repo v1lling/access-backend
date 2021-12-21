@@ -81,7 +81,7 @@ app.use(staticFileMiddleware);
     Redirect to APK
 */
 app.get('/app', function (req, res) {
-  res.sendFile(path.join(__dirname, '/testing/app-release.apk'), function (err) {
+  res.sendFile(path.join(__dirname, '/apk/app-release.apk'), function (err) {
     if (err) {
       res.status(500).send(err)
     }
