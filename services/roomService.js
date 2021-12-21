@@ -1,6 +1,9 @@
 const createRoom = function(roomId) {
     return new Promise(async (resolve, reject) => {
-        await accessDb.collection('rooms').insertOne({roomId: roomId});
+        let isAlreadyExisting = await getIsRoomExisting(roomId);
+        if (!isAlreadyExisting) {
+            await accessDb.collection('rooms').insertOne({roomId: roomId});
+        }
         resolve();
     });
 }
