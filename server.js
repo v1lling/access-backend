@@ -47,15 +47,6 @@ function allowCrossDomain(req, res, next) {
 app.use(allowCrossDomain);
 
 /*
-app.use(session({
-    cookie: {
-      secure: false, 
-      httpOnly: false,
-    }
-}));
-*/
-
-/*
     Routes
 */
 app.use('/access', accessRouter);
