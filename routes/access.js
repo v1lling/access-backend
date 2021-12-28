@@ -1,6 +1,7 @@
 var express = require('express');
 var checkinService = require('../services/checkinService');
 var roomService = require('../services/roomService');
+var feedbackService = require('../services/feedbackService');
 var router = express.Router();
 
 router.post('/checkin', async (req, res) => {
@@ -30,5 +31,11 @@ router.get('/checkincount', async (req, res) => {
   let currentUsers = await roomService.getCurrentPeopleCount(roomId, date);
   res.send({usercount: currentUsers});
 }),
+
+router.post('/feedback', async (req, res) => {
+  let feedback = req.body;
+  await feedbackService.saveFeedback(feedback);
+  res.send(200);
+});
 
 module.exports = router;
