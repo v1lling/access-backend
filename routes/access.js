@@ -34,6 +34,7 @@ router.get('/checkincount', async (req, res) => {
 
 router.post('/feedback', async (req, res) => {
   let feedback = req.body;
+  feedback["date"] = new Date();
   await feedbackService.saveFeedback(feedback);
   res.send(200);
 });
