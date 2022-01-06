@@ -4,7 +4,7 @@ var roomService = require('../services/roomService');
 var feedbackService = require('../services/feedbackService');
 var router = express.Router();
 
-router.post('/checkin', async (req, res) => {
+router.put('/checkin', async (req, res) => {
   let checkInObjIsoDate = req.body;
   checkInObjIsoDate["checkin"] = new Date(checkInObjIsoDate["checkin"]);
   checkInObjIsoDate["checkout"] = new Date(checkInObjIsoDate["checkout"]);
@@ -13,7 +13,7 @@ router.post('/checkin', async (req, res) => {
   res.send({usercount: currentUsers});
 });
 
-router.post('/createroom', async (req, res) => {
+router.put('/createroom', async (req, res) => {
   let roomId = req.body['roomId'];
   await roomService.createRoom(roomId);
   res.send(200);
@@ -32,7 +32,7 @@ router.get('/checkincount', async (req, res) => {
   res.send({usercount: currentUsers});
 }),
 
-router.post('/feedback', async (req, res) => {
+router.put('/feedback', async (req, res) => {
   let feedback = req.body;
   feedback["date"] = new Date();
   await feedbackService.saveFeedback(feedback);
