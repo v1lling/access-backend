@@ -28,7 +28,7 @@ const RESOURCES = {
 "assets/packages/flutter_math_fork/lib/katex_fonts/fonts/KaTeX_Size3-Regular.ttf": "e87212c26bb86c21eb028aba2ac53ec3",
 "assets/packages/flutter_math_fork/lib/katex_fonts/fonts/KaTeX_Main-Regular.ttf": "5a5766c715ee765aa1398997643f1589",
 "assets/packages/wakelock_web/assets/no_sleep.js": "7748a45cd593f33280669b29c2c8919a",
-"assets/packages/nfc_manager/assets/flutter_nfc_min.js": "6d332699b19aa70c7a477b6befd78584",
+"assets/packages/nfc_manager/assets/flutter_nfc_min.js": "319984c381270d774d8854ffdfd276cf",
 "assets/packages/cupertino_icons/assets/CupertinoIcons.ttf": "6d342eb68f170c97609e9da345464e5e",
 "favicon.png": "5dcef449791fa27946b3d35ad8803796",
 "manifest.json": "6bd3aa0db89f8d04fe4ad9607c29fbc8",
@@ -42,8 +42,8 @@ const RESOURCES = {
 "canvaskit/profiling/canvaskit.js": "3783918f48ef691e230156c251169480",
 "version.json": "fd3d424f44c54a2c3cb38dd18096d621",
 "main.dart.js": "132289199e2558c0a293ee9ab014f205",
-"index.html": "616ed7f6b24b40aae9a2597364b11ba3",
-"/": "616ed7f6b24b40aae9a2597364b11ba3"
+"index.html": "6ba0a6a69ee9a78e57a456ee2a68c75a",
+"/": "6ba0a6a69ee9a78e57a456ee2a68c75a"
 };
 
 // The application shell files that are downloaded before a service worker can
