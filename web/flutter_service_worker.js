@@ -5,7 +5,7 @@ const CACHE_NAME = 'flutter-app-cache';
 const RESOURCES = {
   "assets/NOTICES": "b336c206e429086c8a45463175026182",
 "assets/fonts/MaterialIcons-Regular.otf": "4e6447691c9509f7acdbf8a931a85ca1",
-"assets/AssetManifest.json": "b4af034dd3045d37ddb13b684948f7e8",
+"assets/AssetManifest.json": "9aaf3b30da3fecc518fef90760a19773",
 "assets/FontManifest.json": "71a4a82de411f155107da3f8dac64ebd",
 "assets/packages/flutter_math_fork/lib/katex_fonts/fonts/KaTeX_Caligraphic-Bold.ttf": "a9c8e437146ef63fcd6fae7cf65ca859",
 "assets/packages/flutter_math_fork/lib/katex_fonts/fonts/KaTeX_Script-Regular.ttf": "55d2dcd4778875a53ff09320a85a5296",
@@ -28,7 +28,7 @@ const RESOURCES = {
 "assets/packages/flutter_math_fork/lib/katex_fonts/fonts/KaTeX_Size3-Regular.ttf": "e87212c26bb86c21eb028aba2ac53ec3",
 "assets/packages/flutter_math_fork/lib/katex_fonts/fonts/KaTeX_Main-Regular.ttf": "5a5766c715ee765aa1398997643f1589",
 "assets/packages/wakelock_web/assets/no_sleep.js": "7748a45cd593f33280669b29c2c8919a",
-"assets/packages/nfc_manager/assets/flutter_nfc_min.js": "319984c381270d774d8854ffdfd276cf",
+"assets/packages/nfc_manager/assets/flutter_nfc.js": "fff0471e8ecedfc51b41a784a9d1425b",
 "assets/packages/cupertino_icons/assets/CupertinoIcons.ttf": "6d342eb68f170c97609e9da345464e5e",
 "favicon.png": "5dcef449791fa27946b3d35ad8803796",
 "manifest.json": "6bd3aa0db89f8d04fe4ad9607c29fbc8",
@@ -41,9 +41,9 @@ const RESOURCES = {
 "canvaskit/profiling/canvaskit.wasm": "6d1b0fc1ec88c3110db88caa3393c580",
 "canvaskit/profiling/canvaskit.js": "3783918f48ef691e230156c251169480",
 "version.json": "fd3d424f44c54a2c3cb38dd18096d621",
-"main.dart.js": "a3c3f9749c0d6c8748a76c41310612a0",
-"index.html": "643e04629a8949f459a2581feb05b77a",
-"/": "643e04629a8949f459a2581feb05b77a"
+"main.dart.js": "0d364155f2cc2f997b2f22eb24e3bc5e",
+"index.html": "11b3f53da5730b72d9e41d4ff9243485",
+"/": "11b3f53da5730b72d9e41d4ff9243485"
 };
 
 // The application shell files that are downloaded before a service worker can
